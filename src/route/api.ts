@@ -1,10 +1,21 @@
-import {Router, Request, Response, response} from "express";
-import {verifyToken}  from "../infrastructure/http/middleware/verify-token";
-import expenses from "../infrastructure/http/expenses/expenses-route";
-
+import { Router, Request } from "express";
+import { container, inject } from "tsyringe";
+import { CreateAccountController } from "./../infrastructure/http/account/create/controller";
+import { CreateUserController } from "../infrastructure/http/user/create/controller";
 const api: Router = Router();
 
-api.use(verifyToken);
-api.use('/expenses', expenses)
+// acounts
+api
+  .route("/accounts")
+  .post((req: Request, res: Response) =>
+    container.resolve(CreateAccountController).create(req.body, res)
+  );
+
+// users
+api
+  .route("/users")
+  .post((req: Request, res: Response) =>
+    container.resolve(CreateUserController).create(req.body, res)
+  );
 
 export default api;

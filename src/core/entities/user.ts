@@ -1,22 +1,26 @@
-import {IsEmail, IsString} from "class-validator";
+import { IsEmail, IsString } from "class-validator";
+import { CreateUserInput } from "../../application/user/create/input";
+import { v4 as uuidv4 } from "uuid";
 
 export class User {
-    @IsString()
-    id : string;
+  @IsString()
+  id: string;
 
-    @IsString()
-    name: string;
+  @IsString()
+  name: string;
 
-    @IsEmail()
-    email : string;
+  @IsEmail()
+  email: string;
 
-    @IsString()
-    password: string;
+  @IsString()
+  password: string;
 
-    constructor(id:string, name: string, email: string, password: string) {
-        this.id= id;
-        this.name= name;
-        this.email= email;
-        this.password = password;
-    }
+  toInput(): CreateUserInput {
+    return {
+      email: this.email,
+      id: uuidv4(),
+      name: this.name,
+      password: this.password,
+    };
+  }
 }
