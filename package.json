@@ -4,10 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "yarn nodemon",
+    "prepare": "husky",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "npx nodemon",
-    "prepare": "husky"
+    "build": "tsc"
+  },
+  "husk" : {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    } 
   },
   "private": true,
   "type": "module",
