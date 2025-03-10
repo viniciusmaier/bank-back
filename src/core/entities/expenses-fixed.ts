@@ -1,3 +1,3 @@
-import {Expenses} from "./expenses";
+import { Expenses } from './expenses'
 
 export class expensesFixed extends Expenses {}

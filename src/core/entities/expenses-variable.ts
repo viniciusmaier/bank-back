@@ -1,11 +1,10 @@
-import { Expenses } from "./expenses";
-import { IsNumber } from "class-validator";
-import { Account } from "./account";
+import { Expenses } from './expenses'
+import { IsNumber } from 'class-validator'
 
 export class ExpensesVariable extends Expenses {
   @IsNumber()
-  installmentValue: number;
+    installmentValue: number
 
   @IsNumber()
-  numberInstallment: number;
+    numberInstallment: number
 }

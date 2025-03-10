@@ -1,19 +1,15 @@
-import { IsDate, IsNumber, IsString } from "class-validator";
+import { IsDate, IsPositive, IsString } from 'class-validator'
 
 export class Incomes {
   @IsString()
-  id: string;
+    id: string
 
   @IsString()
-  description: string;
+    description: string
 
-  @IsNumber()
-  value: number;
+  @IsPositive()
+    value: number
 
   @IsDate()
-  inputDate: Date;
-
-  isValidValue(): boolean {
-    return !!(this.value && this.value > 0);
-  }
+    inputDate: Date
 }

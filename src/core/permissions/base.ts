@@ -1,6 +1,6 @@
-export class BasePermission {
-  public static CREATE = "CREATE";
-  public static UPDATE = "UPDATE";
-  public static DELETE = "DELETE";
-  public static VIEW = "VIEW";
+export enum BasePermission {
+  CREATE = 'CREATE',
+  UPDATE = 'UPDATE',
+  DELETE = 'DELETE',
+  VIEW = 'VIEW'
 }
