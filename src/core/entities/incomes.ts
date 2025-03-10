@@ -1,15 +1,15 @@
-import { IsDate, IsPositive, IsString } from 'class-validator'
+import { IsDate, IsPositive, IsString } from "class-validator";
 
 export class Incomes {
   @IsString()
-    id: string
+  id: string;
 
   @IsString()
-    description: string
+  description: string;
 
   @IsPositive()
-    value: number
+  value: number;
 
   @IsDate()
-    inputDate: Date
+  inputDate: Date;
 }

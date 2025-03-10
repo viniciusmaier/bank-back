@@ -9,10 +9,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
   },
-  "husk" : {
+  "husk": {
     "hooks": {
       "pre-commit": "lint-staged"
-    } 
+    }
   },
   "private": true,
   "type": "module",

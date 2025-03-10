@@ -1,29 +1,29 @@
-import { IsArray, IsNumber, IsString } from 'class-validator'
-import { Type } from 'class-transformer'
-import { Incomes } from './incomes'
-import { Expenses } from './expenses'
+import { IsArray, IsNumber, IsString } from "class-validator";
+import { Type } from "class-transformer";
+import { Incomes } from "./incomes";
+import { Expenses } from "./expenses";
 export class Account {
   @IsString()
-    id: string
+  id: string;
 
   @IsNumber()
-    amount: number
+  amount: number;
 
   @IsArray()
   @Type((): typeof Expenses => Expenses)
-    expenses: Expenses[]
+  expenses: Expenses[];
 
   @IsArray()
   @Type((): typeof Incomes => Incomes)
-    incomes: Incomes[]
+  incomes: Incomes[];
 
   @Type(() => User)
-    user: User
+  user: User;
 }
 
 class User {
-  email: string
-  password: string
-  name: string
-  id: string
+  email: string;
+  password: string;
+  name: string;
+  id: string;
 }

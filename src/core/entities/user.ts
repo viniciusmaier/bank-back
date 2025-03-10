@@ -1,15 +1,15 @@
-import { IsEmail, IsString } from 'class-validator'
+import { IsEmail, IsString } from "class-validator";
 
 export class User {
   @IsString()
-    id: string
+  id: string;
 
   @IsString()
-    name: string
+  name: string;
 
   @IsEmail()
-    email: string
+  email: string;
 
   @IsString()
-    password: string
+  password: string;
 }
